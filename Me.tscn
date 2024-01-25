@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://73jcjkd2ip50"]
+
+[ext_resource type="Texture2D" uid="uid://dwgtrjtw0w5ls" path="res://JobIcon/00_ROLE/TankRole.png" id="1_dto1h"]
+[ext_resource type="Script" path="res://Me.gd" id="1_j08vq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ag7g"]
+radius = 1.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_j08vq")
+
+[node name="TankRole" type="Sprite2D" parent="."]
+texture = ExtResource("1_dto1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8ag7g")
