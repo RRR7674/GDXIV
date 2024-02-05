@@ -18,11 +18,14 @@ func _init() -> void:
 
 func _on_timer_timeout() -> void:
 	print("time out emit")
-	
+	$HitArea.shape.radius = 100.0
 	queue_free()
 	# set_visible(false)
 	#self.hide()
 	
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	print("on_body_entered!",body)
+	if body.name == "Me":
+		print("Me Entered")
+		pass

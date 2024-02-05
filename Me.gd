@@ -39,6 +39,6 @@ func _physics_process(delta) -> void:
 	elif direction.x < -0.1 and direction.y > 0.1:  #左下↓←
 		set_rotation(-PI * 3 / 4)
 
-	print(" get_rotation:", get_rotation(), "\n direction:", direction, "\n velocity:", self.velocity)
+	#print(" get_rotation:", get_rotation(), "\n direction:", direction, "\n velocity:", self.velocity)
 
 	move_and_slide()
