@@ -44,6 +44,7 @@ const TBL_RECT = [eType.RECT, eType.ROUND_RECT]
 @export_category("Circle/Ellipse")
 ## 半径.
 @export_range(0.0, 512.0) var radius:float = 64.0
+var inner_radius:float = 64.0
 ## 縦横の割合.
 @export_range(0.0, 10.0) var radius_xratio:float = 1.0
 @export_range(0.0, 10.0) var radius_yratio:float = 1.0
@@ -100,12 +101,20 @@ func _get_base_pos() -> Vector2:
 ## 円の描画.
 func _draw_CIRCLE() -> void:
 	var base = _get_base_pos()
-	draw_circle(base, radius, color)
 	
 	if enabled_outline:
+		# 内円の描画.
+		inner_radius = radius - outline_width
+		draw_circle(base, inner_radius, color)
 		# アウトラインの描画.
-		#draw_arc(base, radius, 0.0, 2*PI, divide, outline_color, outline_width)
-		draw_arc(base, radius, 0.0, base + 2*PI, divide, outline_color, outline_width)
+		draw_arc(base, inner_radius, 0.0, 2*PI, divide, outline_color, 2*outline_width)
+		draw_arc(base, inner_radius, PI, 3*PI, divide, outline_color, 2*outline_width)
+		#draw_circle(base, radius + outline_width, outline_color)
+		#print("radius:",radius, " inner_radius:",inner_radius, " outline_width:",outline_width)
+	else:
+		draw_circle(base, radius, color)
+	
+
 
 ## 楕円の描画.
 func _draw_ELLIPSE() -> void:

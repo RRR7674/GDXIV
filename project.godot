@@ -13,13 +13,17 @@ config_version=5
 config/name="FFXIV"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)
 config/icon="res://FFXIVIcons MainCommand (Others)/02_General/limit_break.png"
+
+[autoload]
+
+Me="*res://Me.tscn"
 
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=720
-window/stretch/scale=2.0
 window/dynamic_fonts/use_oversampling=true
 window/icon="res://FFXIVIcons MainCommand (Others)/02_General/limit_break.png"
 

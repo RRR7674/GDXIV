@@ -1,23 +1,28 @@
 extends Area2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var draw_node = draw_circle_node.new()
-	draw_node.radius = 100
-	add_child(draw_node)
-	
+func _ready() -> void:
 	# ビューポートのサイズを取得
-	var viewport_size = get_viewport_rect().size
+	var viewport_size: Vector2 = get_viewport_rect().size
 	# オブジェクトをビューポートの中央に配置
 	position = viewport_size / 2
+	
+	var aoe_radius:float = $HitArea.shape.radius
+	#$HitArea.shape.set_radius(0.0)
+	$HitArea.shape.radius = 0.0
+	print($HitArea.shape.radius)
+	#print(aoe_radius)
 
-class  draw_circle_node extends Node2D:
-	var radius = 100
-	var color = Color(1, 0, 0, 0.5)
+func _init() -> void:
+	#aoe_radius: float = $HitArea.shape.radius
+	pass
+
+func _on_timer_timeout() -> void:
+	print("time out emit")
 	
-	func _draw():
-		draw_circle(Vector2.ZERO, radius, color)
+	queue_free()
+	# set_visible(false)
+	#self.hide()
 	
-	func _ready():
-		#update()
-		pass
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
