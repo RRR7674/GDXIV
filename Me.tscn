@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://xkwk3btfvcup" path="res://JobIcon/00_ROLE/TankRole.png" id="1_dto1h"]
 [ext_resource type="Script" path="res://Me.gd" id="1_j08vq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8ag7g"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4r7m"]
 radius = 1.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Me" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_j08vq")
 
 [node name="TankRole" type="Sprite2D" parent="."]
 texture = ExtResource("1_dto1h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8ag7g")
+[node name="MyHitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l4r7m")

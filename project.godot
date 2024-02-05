@@ -18,7 +18,7 @@ config/icon="res://FFXIVIcons MainCommand (Others)/02_General/limit_break.png"
 
 [autoload]
 
-Me="*res://Me.tscn"
+Audio="*res://Audio.tscn"
 
 [display]
 

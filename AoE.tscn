@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh0be"]
 radius = 100.0
 
-[node name="Area2D" type="Area2D"]
+[node name="AoE" type="Area2D"]
 script = ExtResource("1_a77b4")
 
 [node name="Primitive2D" parent="." instance=ExtResource("2_ih81n")]

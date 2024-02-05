@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cshy5xaew0tcn"]
 
-[ext_resource type="PackedScene" uid="uid://bhlalfcqiwgg8" path="res://AoE.tscn" id="1_dpn3y"]
-[ext_resource type="PackedScene" uid="uid://73jcjkd2ip50" path="res://Me.tscn" id="2_i7xu3"]
+[ext_resource type="PackedScene" uid="uid://73jcjkd2ip50" path="res://Me.tscn" id="1_8b86m"]
+[ext_resource type="PackedScene" uid="uid://bhlalfcqiwgg8" path="res://AoE.tscn" id="2_v4ak3"]
 
 [node name="Node" type="Node"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_dpn3y")]
+[node name="Me" parent="." instance=ExtResource("1_8b86m")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_i7xu3")]
+[node name="AoE" parent="." instance=ExtResource("2_v4ak3")]
